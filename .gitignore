@@ -76,3 +76,4 @@ service-account-key.json
 
 # Log files
 *.log
+/.idea/
