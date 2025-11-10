@@ -15,7 +15,7 @@ public class FibonacciSumSquares {
         return memo.get(n);
     }
 
-    public static BigInteger calcFibSum(long m, long n) {
+    public static BigInteger calcFibSum(long n) {
         Map<Long, BigInteger> memo = new HashMap<>();
         memo.put(0L,BigInteger.valueOf(0));
         memo.put(1L, BigInteger.valueOf(1));
@@ -23,16 +23,15 @@ public class FibonacciSumSquares {
 
         getFibonacciHelper(memo, n);
 
-        for(long i = m; i <= n; i++) result = result.add(memo.get(i));
+        for(long i = 0; i <= n; i++) result = result.add(memo.get(i).pow(2));
 
         return result.mod(BigInteger.valueOf(10));
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        long m = input.nextLong();
         long n = input.nextLong();
 
-        System.out.println(calcFibSum(m, n));
+        System.out.println(calcFibSum(n));
     }
 }
