@@ -25,7 +25,7 @@ public class FibonacciSumLastDigit {
 
         for(long i = m; i <= n; i++) result = result.add(memo.get(i));
 
-        return result;
+        return result.mod(BigInteger.valueOf(10));
     }
 
     public static void main(String[] args) {
